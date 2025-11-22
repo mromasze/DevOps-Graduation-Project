@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "price": 2999.99,
+    "stock": 15
+  },
+  {
+    "id": 2,
+    "name": "Mysz",
+    "price": 89.99,
+    "stock": 50
+  },
+  {
+    "id": 3,
+    "name": "Klawiatura",
+    "price": 199.99,
+    "stock": 30
+  },
+  {
+    "id": 4,
+    "name": "Monitor",
+    "price": 899.99,
+    "stock": 20
+  },
+  {
+    "id": 5,
+    "name": "Słuchawki",
+    "price": 299.99,
+    "stock": 40
+  }
+]

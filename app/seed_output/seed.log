@@ -1,0 +1,11 @@
+Seed completed at: 2025-11-22 13:06:12.157637
+Created 5 users
+Created 5 tasks
+Created 5 products
+
+=== Users ===
+ID: 1, Name: Jan Kowalski, Email: jan@example.com
+ID: 2, Name: Anna Nowak, Email: anna@example.com
+ID: 3, Name: Piotr Wiśniewski, Email: piotr@example.com
+ID: 4, Name: Maria Lewandowska, Email: maria@example.com
+ID: 5, Name: Krzysztof Dąbrowski, Email: krzysztof@example.com

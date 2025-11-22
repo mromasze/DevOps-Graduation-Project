@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4069b6d8-eb3d-4547-837b-b3c28bb4248e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/.flaskenv" afterDir="false" />
+    <list default="true" id="4069b6d8-eb3d-4547-837b-b3c28bb4248e" name="Changes" comment="Finished application front + backend">
+      <change afterPath="$PROJECT_DIR$/app/pytest.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/tests/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/DevOps-Graduation-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DevOps-Graduation-Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/seed/run_seed.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/seed/run_seed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/tests/test_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests/test_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,25 +116,38 @@
       <workItem from="1763733544038" duration="294000" />
       <workItem from="1763738136904" duration="95000" />
       <workItem from="1763763108452" duration="244000" />
-      <workItem from="1763804035810" duration="1073000" />
+      <workItem from="1763804035810" duration="1548000" />
     </task>
+    <task id="LOCAL-00001" summary="Finished application front + backend">
+      <option name="closed" value="true" />
+      <created>1763813203613</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763813203613</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finished application front + backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished application front + backend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app/tests/test_app.py</url>
-          <line>129</line>
+          <line>158</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DevOps_Graduation_Project$DevOps_Graduation_Project.coverage" NAME="DevOps-Graduation-Project Coverage Results" MODIFIED="1763733203234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/DevOps_Graduation_Project$DevOps_Graduation_Project.coverage" NAME="DevOps-Graduation-Project Coverage Results" MODIFIED="1763813408842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
