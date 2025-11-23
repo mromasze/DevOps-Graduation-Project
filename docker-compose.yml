@@ -21,7 +21,7 @@ services:
 
   app:
     build:
-      context: app
+      context: .
       dockerfile: Dockerfile
       target: final
     container_name: flask_app

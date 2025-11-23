@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4069b6d8-eb3d-4547-837b-b3c28bb4248e" name="Changes" comment="Docker file">
-      <change afterPath="$PROJECT_DIR$/app/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="4069b6d8-eb3d-4547-837b-b3c28bb4248e" name="Changes" comment="Docker compose yml">
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +120,7 @@
       <workItem from="1763763108452" duration="244000" />
       <workItem from="1763804035810" duration="1786000" />
       <workItem from="1763895358815" duration="344000" />
-      <workItem from="1763911098861" duration="980000" />
+      <workItem from="1763911098861" duration="1325000" />
     </task>
     <task id="LOCAL-00001" summary="Finished application front + backend">
       <option name="closed" value="true" />
@@ -155,7 +154,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763911868626</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Docker compose yml">
+      <option name="closed" value="true" />
+      <created>1763912125694</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1763912125694</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Docker compose yml">
+      <option name="closed" value="true" />
+      <created>1763912207940</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763912207940</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +180,8 @@
     <MESSAGE value="Finished application front + backend" />
     <MESSAGE value="Tests and migrations" />
     <MESSAGE value="Docker file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Docker file" />
+    <MESSAGE value="Docker compose yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docker compose yml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
