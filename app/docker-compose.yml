@@ -1,0 +1,124 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: flask_postgres
+    environment:
+      POSTGRES_DB: flask_docker_db
+      POSTGRES_USER: flask_user
+      POSTGRES_PASSWORD: flask_password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - back_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flask_user -d flask_docker_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: final
+    container_name: flask_app
+    environment:
+      DATABASE_URL: postgresql://flask_user:flask_password@db:5432/flask_docker_db
+      FLASK_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
+      migration_runner:
+        condition: service_completed_successfully
+      seed_runner:
+        condition: service_completed_successfully
+    networks:
+      - front_net
+      - back_net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:5000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  migration_runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: migration_runner
+    environment:
+      DATABASE_URL: postgresql://flask_user:flask_password@db:5432/flask_docker_db
+    command: >
+      sh -c "
+        echo 'Waiting for database...' &&
+        sleep 5 &&
+        echo 'Running migrations...' &&
+        python -c 'from src.app import db, app; app.app_context().push(); db.create_all()' &&
+        echo 'Migrations completed!'
+      "
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - back_net
+    restart: "no"
+
+  seed_runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: seed_runner
+    environment:
+      DATABASE_URL: postgresql://flask_user:flask_password@db:5432/flask_docker_db
+    command: python seed/run_seed.py
+    depends_on:
+      migration_runner:
+        condition: service_completed_successfully
+    volumes:
+      - seed_output:/seed
+    networks:
+      - back_net
+    restart: "no"
+
+  nginx:
+    image: nginx:alpine
+    container_name: flask_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - app
+    networks:
+      - front_net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  front_net:
+    driver: bridge
+    name: frontend_network
+  back_net:
+    driver: bridge
+    name: backend_network
+
+volumes:
+  db_data:
+    name: postgres_data
+  nginx_logs:
+    name: nginx_logs
+  seed_output:
+    name: seed_output
