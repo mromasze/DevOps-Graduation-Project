@@ -13,7 +13,7 @@ build/
 htmlcov/
 
 # Virtual Environment
-venv/
+app/venv/
 env/
 ENV/
 .venv
@@ -43,7 +43,7 @@ Thumbs.db
 
 # Docker
 docker-compose.yml
-Dockerfile
+../Dockerfile
 .dockerignore
 
 # Migrations (opcjonalnie - możesz je włączyć jeśli chcesz)
