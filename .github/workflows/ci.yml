@@ -8,7 +8,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   test-and-build:
@@ -22,10 +21,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # WAŻNE - ten krok musi być PRZED innymi
       - name: Set lowercase image name
         id: image
         run: |
-          echo "name=$(echo ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+          echo "name=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -41,7 +41,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
@@ -56,7 +56,8 @@ jobs:
           file: ./Dockerfile
           target: builder
           push: false
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:builder
+          load: false
+          tags: ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:builder
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -67,7 +68,8 @@ jobs:
           file: ./Dockerfile
           target: test
           push: false
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:test
+          load: false
+          tags: ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:test
           cache-from: type=gha
 
       - name: Build and push final image
@@ -85,7 +87,7 @@ jobs:
       - name: Generate SBOM
         uses: anchore/sbom-action@v0
         with:
-          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          image: ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:${{ github.sha }}
           format: spdx-json
           output-file: sbom.spdx.json
 
@@ -130,10 +132,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set lowercase image name
+        id: image
+        run: |
+          echo "name=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          image-ref: ${{ env.REGISTRY }}/${{ steps.image.outputs.name }}:${{ github.sha }}
           format: 'sarif'
           output: 'trivy-results.sarif'
 
