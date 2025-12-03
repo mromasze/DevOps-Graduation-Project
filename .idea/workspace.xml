@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4069b6d8-eb3d-4547-837b-b3c28bb4248e" name="Changes" comment="added cd.yml and ci.yml and nginx.conf">
+    <list default="true" id="4069b6d8-eb3d-4547-837b-b3c28bb4248e" name="Changes" comment="hotfix for ci.yml">
       <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +41,12 @@
     &quot;assignee&quot;: &quot;mromasze&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/mromasze/DevOps-Graduation-Project.git&quot;,
-    &quot;accountId&quot;: &quot;7a3fb868-4f71-4ad3-9839-02e5c137c79c&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/mromasze/DevOps-Graduation-Project.git",
+    "accountId": "6e85a5fd-265f-4596-a1f1-28b79fab8ae2"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -104,8 +103,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
-        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+        <option value="bundled-python-sdk-a101402ee41c-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28238.29" />
       </set>
     </attachedChunks>
   </component>
@@ -199,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764619800497</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="hotfix for ci.yml">
+      <option name="closed" value="true" />
+      <created>1764784591886</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764784591886</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +218,8 @@
     <MESSAGE value="Docker compose yml" />
     <MESSAGE value="docker compose fix" />
     <MESSAGE value="added cd.yml and ci.yml and nginx.conf" />
-    <option name="LAST_COMMIT_MESSAGE" value="added cd.yml and ci.yml and nginx.conf" />
+    <MESSAGE value="hotfix for ci.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfix for ci.yml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
