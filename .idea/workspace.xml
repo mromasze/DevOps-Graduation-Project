@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4069b6d8-eb3d-4547-837b-b3c28bb4248e" name="Changes" comment="docker compose fix">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/cd.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/nginx.conf" afterDir="false" />
+    <list default="true" id="4069b6d8-eb3d-4547-837b-b3c28bb4248e" name="Changes" comment="added cd.yml and ci.yml and nginx.conf">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +124,8 @@
       <workItem from="1763895358815" duration="344000" />
       <workItem from="1763911098861" duration="2072000" />
       <workItem from="1763916571525" duration="47000" />
-      <workItem from="1764619208497" duration="545000" />
+      <workItem from="1764619208497" duration="685000" />
+      <workItem from="1764683213535" duration="247000" />
     </task>
     <task id="LOCAL-00001" summary="Finished application front + backend">
       <option name="closed" value="true" />
@@ -195,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764619228285</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added cd.yml and ci.yml and nginx.conf">
+      <option name="closed" value="true" />
+      <created>1764619800497</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764619800497</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +211,8 @@
     <MESSAGE value="Docker file" />
     <MESSAGE value="Docker compose yml" />
     <MESSAGE value="docker compose fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker compose fix" />
+    <MESSAGE value="added cd.yml and ci.yml and nginx.conf" />
+    <option name="LAST_COMMIT_MESSAGE" value="added cd.yml and ci.yml and nginx.conf" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
